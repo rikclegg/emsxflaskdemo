@@ -53,7 +53,8 @@
         teams: [],
         brokers: [],
         orders: [],
-        routes: []
+        routes: [],
+        eventdata: {}
       }
     })
 
@@ -79,7 +80,20 @@
     });
 
     socket.on('emsxevent', function(msg) {
-      console.log("EVENT: " + msg);
+     //console.log("EVENT: " + JSON.stringify(msg));
+      console.log("Event>>>");
+      for(var fc in msg) {
+        field = msg[fc]
+        old =  ((field.old_value=="")?"empty":field.old_value)
+        console.log(field.name + " has changed from " + old + " to " + field.new_value);
+      }
+      //emsx.eventdata=msg[0];
+      //for(var property in msg[0]) {
+      //  console.log(property + "=" + msg[0][property]);
+      //}      
+      //fieldnames = Object.keys(msg[0]);
+      //console.log("Fieldnames: " + fieldnames)
+      //console.log("Fieldname: " + fieldnames[0]);
     });
 
     socket.emit('get_teamlist');
