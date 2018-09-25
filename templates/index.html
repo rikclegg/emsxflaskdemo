@@ -32,20 +32,20 @@
             <th>Instructions</th>
           </tr>
           <tr v-for="order in orders">
-            <td :id="order.EMSX_SEQUENCE+'EMSX_STATUS'">{{ order.EMSX_STATUS}}</td>
-            <td>{{ order.EMSX_SEQUENCE}}</td>
-            <td>{{ order.EMSX_SIDE}}</td>
-            <td>{{ order.EMSX_AMOUNT}}</td>
-            <td>{{ order.EMSX_TICKER}}</td>
-            <td>{{ order.EMSX_TIF}}</td>
-            <td>{{ order.EMSX_ORDER_TYPE}}</td>
-            <td>{{ order.EMSX_LIMIT_PRICE}}</td>
-            <td>{{ order.EMSX_ACCOUNT}}</td>
-            <td>{{ order.EMSX_FILLED}}</td>
-            <td>{{ order.EMSX_DAY_FILL}}</td>
-            <td>{{ order.EMSX_AVG_PRICE}}</td>
-            <td>{{ order.EMSX_DAY_AVG_PRICE}}</td>
-            <td>{{ order.EMSX_NOTES}}</td>
+            <td :id="order.EMSX_SEQUENCE+'.EMSX_STATUS'">{{ order.EMSX_STATUS}}</td>
+            <td :id="order.EMSX_SEQUENCE+'.EMSX_SEQUENCE'">{{ order.EMSX_SEQUENCE}}</td>
+            <td :id="order.EMSX_SEQUENCE+'.EMSX_SIDE'">{{ order.EMSX_SIDE}}</td>
+            <td :id="order.EMSX_SEQUENCE+'.EMSX_AMOUNT'">{{ order.EMSX_AMOUNT}}</td>
+            <td :id="order.EMSX_SEQUENCE+'.EMSX_TICKER'">{{ order.EMSX_TICKER}}</td>
+            <td :id="order.EMSX_SEQUENCE+'.EMSX_TIF'">{{ order.EMSX_TIF}}</td>
+            <td :id="order.EMSX_SEQUENCE+'.EMSX_ORDER_TYPE'">{{ order.EMSX_ORDER_TYPE}}</td>
+            <td :id="order.EMSX_SEQUENCE+'.EMSX_LIMIT_PRICE'">{{ order.EMSX_LIMIT_PRICE}}</td>
+            <td :id="order.EMSX_SEQUENCE+'.EMSX_ACCOUNT'">{{ order.EMSX_ACCOUNT}}</td>
+            <td :id="order.EMSX_SEQUENCE+'.EMSX_FILLED'">{{ order.EMSX_FILLED}}</td>
+            <td :id="order.EMSX_SEQUENCE+'.EMSX_DAY_FILL'">{{ order.EMSX_DAY_FILL}}</td>
+            <td :id="order.EMSX_SEQUENCE+'.EMSX_AVG_PRICE'">{{ order.EMSX_AVG_PRICE}}</td>
+            <td :id="order.EMSX_SEQUENCE+'.EMSX_DAY_AVG_PRICE'">{{ order.EMSX_DAY_AVG_PRICE}}</td>
+            <td :id="order.EMSX_SEQUENCE+'.EMSX_NOTES'">{{ order.EMSX_NOTES}}</td>
           </tr>
         </table>
       </div>
@@ -73,24 +73,26 @@
               <th>End</th>
             </tr>
             <tr v-for="route in routes">
-              <td>{{route.EMSX_STATUS}}</td>
-              <td>{{route.EMSX_ROUTE_NO}}</td>
-              <td>{{route.EMSX_AMOUNT}}</td>
-              <td>{{route.EMSX_TICKER}}</td>
-              <td>{{route.EMSX_BROKER}}</td>
-              <td>{{route.EMSX_TIF}}</td>
-              <td>{{route.EMSX_ORDER_TYPE}}</td>
-              <td>{{route.EMSX_LIMIT_PRICE}}</td>
-              <td>{{route.EMSX_ACCOUNT}}</td>
-              <td>{{route.EMSX_FILLED}}</td>
-              <td>{{route.EMSX_DAY_FILL}}</td>
-              <td>{{route.EMSX_AVG_PRICE}}</td>
-              <td>{{route.EMSX_DAY_AVG_PRICE}}</td>
-              <td>{{route.EMSX_NOTES}}</td>
-              <td>{{route.EMSX_STRATEGY_TYPE}}</td>
-              <td>{{route.EMSX_STRATEGY_STYLE}}</td>
-              <td>{{route.EMSX_STRATEGY_START_TIME}}</td>
-              <td>{{route.EMSX_STRATEGY_END_TIME}}</td>
+              <!-- Add v-bind:class="[classArray]" to each entry so that we can modify the source data (list of classes) for each entry 
+              Also, if we're adding the list of fields to the Vue object below, here we will iterate that list -->
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_STATUS'">{{route.EMSX_STATUS}}</td>
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_ROUTE_NO'">{{route.EMSX_ROUTE_NO}}</td>
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_AMOUNT'">{{route.EMSX_AMOUNT}}</td>
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_TICKER'">{{route.EMSX_TICKER}}</td>
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_BROKER'">{{route.EMSX_BROKER}}</td>
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_TIF'">{{route.EMSX_TIF}}</td>
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_ORDER_TYPE'">{{route.EMSX_ORDER_TYPE}}</td>
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_LIMIT_PRICE'">{{route.EMSX_LIMIT_PRICE}}</td>
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_ACCOUNT'">{{route.EMSX_ACCOUNT}}</td>
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_FILLED'">{{route.EMSX_FILLED}}</td>
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_DAY_FILL'">{{route.EMSX_DAY_FILL}}</td>
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_AVG_PRICE'">{{route.EMSX_AVG_PRICE}}</td>
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_DAY_AVG_PRICE'">{{route.EMSX_DAY_AVG_PRICE}}</td>
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_NOTES'">{{route.EMSX_NOTES}}</td>
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_STRATEGY_TYPE'">{{route.EMSX_STRATEGY_TYPE}}</td>
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_STRATEGY_STYLE'">{{route.EMSX_STRATEGY_STYLE}}</td>
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_STRATEGY_START_TIME'">{{route.EMSX_STRATEGY_START_TIME}}</td>
+              <td :id="route.EMSX_ROUTE_NO+'.EMSX_STRATEGY_END_TIME'">{{route.EMSX_STRATEGY_END_TIME}}</td>
             </tr>
           </table>
         </div>
@@ -102,6 +104,7 @@
     var emsx = new Vue({
       el: '#emsx',
       data: {
+        //Add list of order fields and route fields. Each element has the API field name, and the display name. 
         teams: [],
         brokers: [],
         orders: {},
@@ -192,6 +195,17 @@
         order[field]=fields[field];
       }
       emsx.$set(emsx.orders, order.EMSX_SEQUENCE, order);
+
+      for(field in fields) {
+        targetId=seqno+"."+field;
+        console.log("Looking for Target: " + targetId);
+        target = document.getElementById(seqno+"."+field);
+        console.log("Found Target: " + target);
+        if(target != null) {
+          target.classList.add('highlight-updated');
+          //setTimeout(function(){ target.classList.remove('highlight-updated'); }, 3000);
+        }
+      }
     });
 
     socket.on('emsx-order-delete', function(msg) {
