@@ -1,0 +1,79 @@
+body {
+    background-color: #f4f4f4;
+    color: #555555;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.6em;
+    margin:0;
+    background-image: url('../images/body_background.jpg');
+
+}
+
+#demo-header {
+    margin-left: 30px;
+    margin-right: 30px;
+    color: #0562b3;
+}
+
+#order-header {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.2em;
+    margin-left: 10px;
+}
+
+
+#order-table {
+    background-image: url('../images/table_background.jpg');
+    width: 100%;
+}
+
+#route-table {
+    background-image: url('../images/table_background.jpg');
+    width: 100%;
+}
+
+#route-header {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.2em;
+    margin-left: 10px;
+}
+
+
+th {
+    font-size:12px;
+    font-weight: bold;
+    background-color: rgb(195, 240, 255);
+    padding-left: 3px;
+    padding-right: 3px; 
+    line-height:1.8em;
+}
+
+td {
+    color: black;
+    font-size:10px;
+    padding-left: 3px;
+    padding-right: 3px; 
+    padding-top:0px;
+    padding-bottom:0px;
+    line-height:1.6em;
+}
+
+tr {
+    background-color: rgba(110, 255, 234, 0.5);
+}
+tr:hover {
+    background-color: rgba(110, 255, 234, 0.8);
+}
+
+td:hover {
+    background-color: rgba(110, 230, 244, 1);
+}
+
+.blotter {
+    margin-left: 30px;
+    margin-right: 30px;
+}
